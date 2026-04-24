@@ -95,11 +95,15 @@ List keys:
 Sign the checksum file:
 
     gpg --detach-sign install.sh.sha256
-
+    
 This creates:
 
     install.sh.sha256.sig
 
+Note to use the same key:
+
+    gpg --list-secret-keys --keyid-format LONG
+    gpg --local-user KEYID --detach-sign install.sh.sha256
 ---
 
 ## ⚙️ Task 6: Verify the Signature
